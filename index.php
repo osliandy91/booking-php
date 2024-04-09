@@ -9,16 +9,16 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet">
 
     <style>
         body {
-            /*padding-top: 50px; !* Ajuste para el logo *!*/
+            /*padding-top: 50px; /* Ajuste para el logo */
             font-family: 'Lato', sans-serif;
         }
     </style>
 </head>
-<body  style="background-color: #e7e7e7">
+<body  style="background-color: #d5d5d5;">
 <!-- Navbar -->
 <!--<nav class="navbar navbar-dark bg-primary">-->
 <!--    <div class="container-fluid">-->
@@ -30,111 +30,110 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-lg-8 offset-lg-2">
-            <div style="background-color: #f8f8f8; padding: 40px; border-radius: 10px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-
+            <div class="card p-4">
                 <div class="row mb-3">
                     <div class="col">
                         <img src="img/background.jpg" class="img-fluid" alt="Imagen" style="max-width: 100%; border-radius: 10px">
                     </div>
                 </div>
 
-            <form id="form_data_booking">
+                <form id="form_data_booking">
+                    <fieldset>
+                        <legend>Service</legend>
+                        <div class="mb-3">
+                            <label for="service" class="form-label">Choose a service (*)</label>
+                            <select multiple class="form-select select2" id="service" name="service" required style="width: 100%">
+                                <option value="" disabled>Choose one or more</option>
+                                <option value="manicury">Manicury</option>
+                                <option value="pedicury">Pedicury</option>
+                            </select>
+                        </div>
 
-                <fieldset>
-                    <legend>Service</legend>
-                <div class="mb-3">
-                    <label for="service" class="form-label">Choose a service (*)</label>
-                    <select multiple class="form-select select2" id="service" name="service" required style="width: 100%">
-                        <option value="" disabled>Choose one or more</option>
-                        <option value="manicury">Manicury</option>
-                        <option value="pedicury">Pedicury</option>
-                    </select>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="date_book" class="form-label">Date (*)</label>
-                        <input type="date" class="form-control" id="date_book" required  min="<?php echo date('Y-m-d'); ?>">
-                    </div>
-                    <div class="col">
-                        <label for="timeslot" class="form-label">Time (*)</label>
-                        <select class="form-select" id="timeslot" required>
-                            <option value="570">9:30 am</option>
-                            <option value="585">9:45 am</option>
-                            <option value="600">10:00 am</option>
-                            <option value="615">10:15 am</option>
-                            <option value="630">10:30 am</option>
-                            <option value="645">10:45 am</option>
-                            <option value="660">11:00 am</option>
-                            <option value="675">11:15 am</option>
-                            <option value="690">11:30 am</option>
-                            <option value="705">11:45 am</option>
-                            <option value="720">12:00 pm</option>
-                            <option value="735">12:15 pm</option>
-                            <option value="750">12:30 pm</option>
-                            <option value="765">12:45 pm</option>
-                            <option value="780">1:00 pm</option>
-                            <option value="795">1:15 pm</option>
-                            <option value="810">1:30 pm</option>
-                            <option value="825">1:45 pm</option>
-                            <option value="840">2:00 pm</option>
-                            <option value="855">2:15 pm</option>
-                            <option value="870">2:30 pm</option>
-                            <option value="885">2:45 pm</option>
-                            <option value="900">3:00 pm</option>
-                            <option value="915">3:15 pm</option>
-                            <option value="930">3:30 pm</option>
-                        </select>
-                    </div>
-                </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="date_book" class="form-label">Date (*)</label>
+                                <input type="date" class="form-control" id="date_book" required  min="<?php echo date('Y-m-d'); ?>">
+                            </div>
+                            <div class="col">
+                                <label for="timeslot" class="form-label">Time (*)</label>
+                                <select class="form-select" id="timeslot" required>
+                                    <option value="570">9:30 am</option>
+                                    <option value="585">9:45 am</option>
+                                    <option value="600">10:00 am</option>
+                                    <option value="615">10:15 am</option>
+                                    <option value="630">10:30 am</option>
+                                    <option value="645">10:45 am</option>
+                                    <option value="660">11:00 am</option>
+                                    <option value="675">11:15 am</option>
+                                    <option value="690">11:30 am</option>
+                                    <option value="705">11:45 am</option>
+                                    <option value="720">12:00 pm</option>
+                                    <option value="735">12:15 pm</option>
+                                    <option value="750">12:30 pm</option>
+                                    <option value="765">12:45 pm</option>
+                                    <option value="780">1:00 pm</option>
+                                    <option value="795">1:15 pm</option>
+                                    <option value="810">1:30 pm</option>
+                                    <option value="825">1:45 pm</option>
+                                    <option value="840">2:00 pm</option>
+                                    <option value="855">2:15 pm</option>
+                                    <option value="870">2:30 pm</option>
+                                    <option value="885">2:45 pm</option>
+                                    <option value="900">3:00 pm</option>
+                                    <option value="915">3:15 pm</option>
+                                    <option value="930">3:30 pm</option>
+                                </select>
+                            </div>
+                        </div>
                     </fieldset>
 
-                <fieldset>
-                    <legend>Your data</legend>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="first_name" class="form-label">First name (*)</label>
-                        <input type="text" class="form-control" id="first_name" required>
-                    </div>
-                    <div class="col">
-                        <label for="last_name" class="form-label">Last name (*)</label>
-                        <input type="text" class="form-control" id="last_name" required>
-                    </div>
-                </div>
+                    <fieldset>
+                        <legend>Your data</legend>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="first_name" class="form-label">First name (*)</label>
+                                <input type="text" class="form-control" id="first_name" required>
+                            </div>
+                            <div class="col">
+                                <label for="last_name" class="form-label">Last name (*)</label>
+                                <input type="text" class="form-control" id="last_name" required>
+                            </div>
+                        </div>
 
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="email" class="form-label">Email (*)</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="col">
-                        <label for="phone" class="form-label">Phone number (*)</label>
-                        <input type="tel" class="form-control" id="phone" required>
-                    </div>
-                </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <label for="email" class="form-label">Email (*)</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col">
+                                <label for="phone" class="form-label">Phone number (*)</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                        </div>
 
-                <div class="mb-3">
-                    <label for="note" class="form-label">Note</label>
-                    <textarea class="form-control" id="note"></textarea>
-                </div>
+                        <div class="mb-3">
+                            <label for="note" class="form-label">Note</label>
+                            <textarea class="form-control" id="note"></textarea>
+                        </div>
                     </fieldset>
 
-                <fieldset>
-                    <legend>Your card</legend>
-                <div class="card-js mb-3">
-                    <input class="card-number my-custom-class form-control" name="card-number">
-                    <input class="name form-control" id="the-card-name-id" name="card-holders-name" placeholder="Name on card">
-                    <input class="expiry-month form-control" name="expiry-month">
-                    <input class="expiry-year form-control" name="expiry-year">
-                    <input class="cvc form-control" name="cvc">
-                </div>
-                </fieldset>
+                    <fieldset>
+                        <legend>Your card</legend>
+                        <div class="card-js mb-3">
+                            <input class="card-number my-custom-class form-control" name="card-number">
+                            <input class="name form-control" id="the-card-name-id" name="card-holders-name" placeholder="Name on card">
+                            <input class="expiry-month form-control" name="expiry-month">
+                            <input class="expiry-year form-control" name="expiry-year">
+                            <input class="cvc form-control" name="cvc">
+                        </div>
+                    </fieldset>
 
-                <div class="row mb-3" style="text-align: center; margin-top: 30px">
-                <button class="btn btn-primary" type="submit" name="action">Book now</button>
-                </div>
-            </form>
+                    <div class="row mb-3" style="text-align: center; margin-top: 30px">
+                        <button class="btn btn-primary btn-lg" type="submit" name="action">Book now</button>
+                    </div>
+                </form>
                 <p>(*) Mandatory fields</p>
+            </div>
         </div>
     </div>
 </div>
