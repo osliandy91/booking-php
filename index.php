@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Datos</title>
+    <title>Cucky nails booking</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="./CardJs-master/card-js.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+
     <style>
         body {
-            padding-top: 50px; /* Ajuste para el logo */
+            /*padding-top: 50px; !* Ajuste para el logo *!*/
+            font-family: 'Lato', sans-serif;
         }
     </style>
 </head>
-<body>
+<body  style="background-color: #e7e7e7">
 <!-- Navbar -->
-<nav class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-        <a href="#" class="navbar-brand">Logo</a>
-    </div>
-</nav>
+<!--<nav class="navbar navbar-dark bg-primary">-->
+<!--    <div class="container-fluid">-->
+<!--        <a href="#" class="navbar-brand">Logo</a>-->
+<!--    </div>-->
+<!--</nav>-->
 
 <!-- Contenido principal -->
-<div class="container mt-5" style="background-color: #f1f1f1">
-    <div class="row">
-        <div class="col-lg-6 offset-lg-3">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 offset-lg-2">
+            <div style="background-color: #f8f8f8; padding: 40px; border-radius: 10px; border: 1px solid #ccc; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <img src="img/background.jpg" class="img-fluid" alt="Imagen" style="max-width: 100%; border-radius: 10px">
+                    </div>
+                </div>
+
             <form id="form_data_booking">
 
                 <fieldset>
-                    <legend>Your data</legend>
+                    <legend>Service</legend>
                 <div class="mb-3">
                     <label for="service" class="form-label">Choose a service (*)</label>
                     <select multiple class="form-select select2" id="service" name="service" required style="width: 100%">
@@ -41,7 +54,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="date_book" class="form-label">Date (*)</label>
-                        <input type="date" class="form-control" id="date_book" required>
+                        <input type="date" class="form-control" id="date_book" required  min="<?php echo date('Y-m-d'); ?>">
                     </div>
                     <div class="col">
                         <label for="timeslot" class="form-label">Time (*)</label>
@@ -74,7 +87,10 @@
                         </select>
                     </div>
                 </div>
+                    </fieldset>
 
+                <fieldset>
+                    <legend>Your data</legend>
                 <div class="row mb-3">
                     <div class="col">
                         <label for="first_name" class="form-label">First name (*)</label>
@@ -114,11 +130,15 @@
                 </div>
                 </fieldset>
 
-                <button class="btn btn-primary" type="submit" name="action">Book</button>
+                <div class="row mb-3" style="text-align: center; margin-top: 30px">
+                <button class="btn btn-primary" type="submit" name="action">Book now</button>
+                </div>
             </form>
+                <p>(*) Mandatory fields</p>
         </div>
     </div>
 </div>
+
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
